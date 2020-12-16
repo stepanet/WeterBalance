@@ -32,7 +32,7 @@ struct YourWeightView: View {
             }
             .padding(.bottom,25)
             
-            Text("Ваш вес \(Int(weigth)) кг. \(percent)")
+            Text("Ваш вес \(Int(weigth)) кг.")
                 .font(.title3)
                 .padding(.bottom,25)
 //            Slider(value: $weigth, in: 0...150, step: 1)
