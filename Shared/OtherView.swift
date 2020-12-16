@@ -47,7 +47,7 @@ struct OtherView: View {
 struct OtherView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OtherView(showOther: .constant(true), percent: .constant(10), allWater: . constant(1000))
+            OtherView(showOther: .constant(true), percent: .constant(10), allWater: . constant(1))
         }
     }
 }

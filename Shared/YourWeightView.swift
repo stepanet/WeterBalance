@@ -35,9 +35,6 @@ struct YourWeightView: View {
             Text("Ваш вес \(Int(weigth)) кг.")
                 .font(.title3)
                 .padding(.bottom,25)
-//            Slider(value: $weigth, in: 0...150, step: 1)
-//                .padding(.horizontal,10)
-//                .padding(.bottom,25)
             
             Slider(value: Binding(get: {
                             self.weigth
@@ -53,14 +50,12 @@ struct YourWeightView: View {
         .background(Color(white: 1, opacity: 1))
         .cornerRadius(10)
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        .offset(y: -700)
     }
 }
 
 struct YourWeightView_Previews: PreviewProvider {
     static var previews: some View {
-        YourWeightView(showWeigth: .constant(true), weigth: .constant(100), allWater: .constant(500), percent: .constant(50))
-            .offset(y: 500)
+        YourWeightView(showWeigth: .constant(true), weigth: .constant(71), allWater: .constant(1), percent: .constant(1))
         ContentView()
     }
 }
