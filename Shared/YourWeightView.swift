@@ -12,6 +12,7 @@ struct YourWeightView: View {
     @Binding var showWeigth: Bool
     @Binding var weigth: CGFloat
     @Binding var allWater: CGFloat
+    @Binding var percent: CGFloat
     
     var body: some View {
         
@@ -31,7 +32,7 @@ struct YourWeightView: View {
             }
             .padding(.bottom,25)
             
-            Text("Ваш вес \(Int(weigth)) кг.")
+            Text("Ваш вес \(Int(weigth)) кг. \(percent)")
                 .font(.title3)
                 .padding(.bottom,25)
 //            Slider(value: $weigth, in: 0...150, step: 1)
@@ -42,8 +43,9 @@ struct YourWeightView: View {
                             self.weigth
                         }, set: { newValue  in
                             self.weigth = newValue
+                            self.percent = percent * (allWater / (newValue * 35))
                             self.allWater = newValue * 35
-                        }), in: 0...150)
+                        }), in: 0...150, step: 1)
             .padding(.horizontal,10)
             .padding(.bottom,25)
         }
@@ -57,8 +59,8 @@ struct YourWeightView: View {
 
 struct YourWeightView_Previews: PreviewProvider {
     static var previews: some View {
-        YourWeightView(showWeigth: .constant(true), weigth: .constant(100), allWater: .constant(500))
+        YourWeightView(showWeigth: .constant(true), weigth: .constant(100), allWater: .constant(500), percent: .constant(50))
             .offset(y: 500)
-        //YourWeightView()
+        ContentView()
     }
 }

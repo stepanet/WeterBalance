@@ -12,15 +12,15 @@ struct ContentView: View {
     @State var percent: CGFloat = 0
     @State var showOther = false
     @State var showWeigth = false
-    @State var weigth: CGFloat = 0
+    @State var weigth: CGFloat = 70
     @State var allWater: CGFloat = 0//объем воды 35мл на кг
     
     var body: some View {
         
         ZStack {
-            YourWeightView(showWeigth: $showWeigth, weigth: $weigth,allWater: $allWater)
+            YourWeightView(showWeigth: $showWeigth, weigth: $weigth,allWater: $allWater, percent: $percent)
                 .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                .offset(y: showWeigth ? 600 : 0)
+                .offset(y: showWeigth ? 900 : 0)
                 .animation(.easeInOut)
             VStack {
                 Text("Гидратация")
@@ -30,12 +30,15 @@ struct ContentView: View {
                     Image(systemName: "gearshape.fill")
                     Button(action: {
                         self.showWeigth.toggle()
+                        self.showOther = false
                     }, label: {
                         Image(systemName: "drop.fill")
                         //.renderingMode(.original)
                     })
                     Button(action: {
                         self.percent = 0
+                        self.showOther = false
+                        self.showWeigth = false
                     }, label: {
                         Image(systemName: "stop.fill")
                         //.renderingMode(.original)
@@ -114,9 +117,9 @@ struct ContentView: View {
                     
                 }
                 Spacer()
-                
-                
             }.blur(radius: showWeigth ? 1 : 0)
+        }.onAppear(){
+            self.allWater =  35 * weigth
         }
     }
 }
