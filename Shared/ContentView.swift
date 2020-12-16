@@ -15,6 +15,9 @@ struct ContentView: View {
     @State var weigth: CGFloat = 70
     @State var allWater: CGFloat = 0//объем воды 35мл на кг
     
+    var color1 = Color(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1))
+    var color2 = Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1))
+    
     var body: some View {
         
         ZStack {
@@ -25,14 +28,17 @@ struct ContentView: View {
             VStack {
                 Text("Гидратация")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
                     .padding()
                 HStack(spacing: 50) {
                     Image(systemName: "gearshape.fill")
+                        .foregroundColor(.gray)
                     Button(action: {
                         self.showWeigth.toggle()
                         self.showOther = false
                     }, label: {
                         Image(systemName: "drop.fill")
+                            .foregroundColor(color2)
                         //.renderingMode(.original)
                     })
                     Button(action: {
@@ -41,6 +47,7 @@ struct ContentView: View {
                         self.showWeigth = false
                     }, label: {
                         Image(systemName: "stop.fill")
+                            .foregroundColor(color2)
                         //.renderingMode(.original)
                     })
                 }
@@ -67,7 +74,7 @@ struct ContentView: View {
                                 Text("150")
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .background(Color.gray)
+                                    .background(color1)
                                     .foregroundColor(.white)
                                     .cornerRadius(5)
                                 
@@ -78,7 +85,7 @@ struct ContentView: View {
                                 Text("250")
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .background(Color.gray)
+                                    .background(color1)
                                     .foregroundColor(.white)
                                     .cornerRadius(5)
                                 
@@ -93,7 +100,7 @@ struct ContentView: View {
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .padding()
                                     .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .background(Color.gray)
+                                    .background(color2)
                                     .foregroundColor(.white)
                                     .cornerRadius(5)
                                 
@@ -105,7 +112,7 @@ struct ContentView: View {
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .padding()
                                     .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .background(Color.gray)
+                                    .background(color2)
                                     .foregroundColor(.white)
                                     .cornerRadius(5)
                                 

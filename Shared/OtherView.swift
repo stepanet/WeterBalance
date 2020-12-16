@@ -13,8 +13,6 @@ struct OtherView: View {
     @Binding var percent: CGFloat
     @Binding var allWater: CGFloat
     
-    //@State var percent:CGFloat = 0
-    
     var body: some View {
         VStack {
             HStack{
@@ -48,6 +46,8 @@ struct OtherView: View {
 
 struct OtherView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherView(showOther: .constant(true), percent: .constant(20), allWater: . constant(1000))
+        Group {
+            OtherView(showOther: .constant(true), percent: .constant(10), allWater: . constant(1000))
+        }
     }
 }

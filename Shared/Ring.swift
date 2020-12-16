@@ -25,7 +25,7 @@ struct RingView: View {
     return ZStack {
             
             Circle()
-                .stroke(Color.black.opacity(0.3), style: StrokeStyle(lineWidth: 5 * multiplier, lineJoin: .round))
+                .stroke(Color.black.opacity(0.2), style: StrokeStyle(lineWidth: 5 * multiplier, lineJoin: .round))
                 .frame(width: width * multiplier, height: width * multiplier)
             Circle()
                 .trim(from: show ? progress : 1, to: 1)
@@ -40,6 +40,7 @@ struct RingView: View {
             Text("\(Int(percent))%")
                 .fontWeight(.bold)
                 .font(.system(size: 14 * multiplier))
+                .foregroundColor(color2)
                 
         }
     }
