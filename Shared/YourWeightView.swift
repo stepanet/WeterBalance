@@ -9,6 +9,8 @@ import SwiftUI
 
 struct YourWeightView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var showWeigth: Bool
     @Binding var weigth: CGFloat
     @Binding var allWater: CGFloat
@@ -35,6 +37,7 @@ struct YourWeightView: View {
             Text("Ваш вес \(Int(weigth)) кг.")
                 .font(.title3)
                 .padding(.bottom,25)
+                .foregroundColor(colorScheme == .dark ? Color.black: Color.black)
             
             Slider(value: Binding(get: {
                             self.weigth
@@ -56,6 +59,7 @@ struct YourWeightView: View {
 struct YourWeightView_Previews: PreviewProvider {
     static var previews: some View {
         YourWeightView(showWeigth: .constant(true), weigth: .constant(71), allWater: .constant(1), percent: .constant(1))
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         ContentView()
     }
 }

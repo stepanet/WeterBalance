@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OtherView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var showOther: Bool
     @Binding var percent: CGFloat
     @Binding var allWater: CGFloat
@@ -32,7 +34,7 @@ struct OtherView: View {
             Text("Добавить воды \(Int(allWater * percent / 100)) мл.")
                 .font(.title3)
                 .padding(.bottom,25)
-            //Slider(value: $percent)
+                .foregroundColor(colorScheme == .dark ? Color.black: Color.black)
             Slider(value: $percent, in: -0...100, step: 1)
                 .padding(.horizontal,10)
                 .padding(.bottom,25)
@@ -48,6 +50,7 @@ struct OtherView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OtherView(showOther: .constant(true), percent: .constant(10), allWater: . constant(1))
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         }
     }
 }

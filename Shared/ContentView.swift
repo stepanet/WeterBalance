@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var percent: CGFloat = 0
     @State var showOther = false
     @State var showWeigth = false
@@ -26,7 +28,7 @@ struct ContentView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .kerning(2)
                     .fontWeight(.bold)
-                    .foregroundColor(color2)
+                    .foregroundColor(colorScheme == .dark ? color1: color2)
                     .padding(.bottom, 24)
                 
                 HStack(spacing: 80) {
@@ -140,6 +142,10 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .preferredColorScheme(.dark)
+            ContentView()
+        }
     }
 }
