@@ -15,6 +15,10 @@
 		E0C5080E2589600C0001EBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C507F82589600B0001EBC9 /* Assets.xcassets */; };
 		E0C5081A2589614B0001EBC9 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C508192589614B0001EBC9 /* Ring.swift */; };
 		E0C5081B2589614B0001EBC9 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C508192589614B0001EBC9 /* Ring.swift */; };
+		E0C5081F25896A9B0001EBC9 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5081E25896A9B0001EBC9 /* OtherView.swift */; };
+		E0C5082025896A9B0001EBC9 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5081E25896A9B0001EBC9 /* OtherView.swift */; };
+		E0C5082425897A920001EBC9 /* YourWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5082325897A920001EBC9 /* YourWeightView.swift */; };
+		E0C5082525897A920001EBC9 /* YourWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5082325897A920001EBC9 /* YourWeightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,8 @@
 		E0C508072589600C0001EBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0C508082589600C0001EBC9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E0C508192589614B0001EBC9 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		E0C5081E25896A9B0001EBC9 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		E0C5082325897A920001EBC9 /* YourWeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWeightView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 			children = (
 				E0C507F6258960090001EBC9 /* WeterBalanceApp.swift */,
 				E0C507F7258960090001EBC9 /* ContentView.swift */,
+				E0C5082325897A920001EBC9 /* YourWeightView.swift */,
+				E0C5081E25896A9B0001EBC9 /* OtherView.swift */,
 				E0C508192589614B0001EBC9 /* Ring.swift */,
 				E0C507F82589600B0001EBC9 /* Assets.xcassets */,
 			);
@@ -193,7 +201,9 @@
 			files = (
 				E0C5080B2589600C0001EBC9 /* ContentView.swift in Sources */,
 				E0C5081A2589614B0001EBC9 /* Ring.swift in Sources */,
+				E0C5082425897A920001EBC9 /* YourWeightView.swift in Sources */,
 				E0C508092589600C0001EBC9 /* WeterBalanceApp.swift in Sources */,
+				E0C5081F25896A9B0001EBC9 /* OtherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +213,9 @@
 			files = (
 				E0C5080C2589600C0001EBC9 /* ContentView.swift in Sources */,
 				E0C5081B2589614B0001EBC9 /* Ring.swift in Sources */,
+				E0C5082525897A920001EBC9 /* YourWeightView.swift in Sources */,
 				E0C5080A2589600C0001EBC9 /* WeterBalanceApp.swift in Sources */,
+				E0C5082025896A9B0001EBC9 /* OtherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
