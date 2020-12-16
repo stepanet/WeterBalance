@@ -65,11 +65,8 @@ struct ContentView: View {
                     .padding(.horizontal, 40)
                     .padding(.bottom,34)
                     .multilineTextAlignment(.center)
-                    
-                
                 
                 RingView(percent: percent, show: true)
-                    .shadow(radius: 3)
                     .padding(.bottom, 64)
                 
                 VStack(spacing: 20) {
@@ -123,7 +120,8 @@ struct ContentView: View {
                         })
                     }
                 }
-            }//.blur(radius: showWeigth ? 1 : 0)
+            }
+            
             .onAppear(){
                 self.allWater =  35 * weigth //объем воды 35мл на кг
             }
