@@ -59,7 +59,8 @@ struct YourWeightView: View {
 struct YourWeightView_Previews: PreviewProvider {
     static var previews: some View {
         YourWeightView(showWeigth: .constant(true), weigth: .constant(71), allWater: .constant(1), percent: .constant(1))
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            //.preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         ContentView()
+          //  .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

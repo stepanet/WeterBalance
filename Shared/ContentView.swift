@@ -68,7 +68,7 @@ struct ContentView: View {
                     .padding(.bottom,34)
                     .multilineTextAlignment(.center)
                 
-                RingView(percent: percent, show: true)
+                RingView(percent: percent, show: true, allWater: $allWater)
                     .padding(.bottom, 64)
                 
                 VStack(spacing: 20) {
@@ -144,8 +144,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-                .preferredColorScheme(.dark)
-            ContentView()
+             //   .preferredColorScheme(.dark)
         }
     }
 }

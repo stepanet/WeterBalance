@@ -18,13 +18,15 @@ struct RingView: View {
     
     
     @State var show: Bool
+    @Binding var allWater: CGFloat
     
     var body: some View {
         
         let multiplier = width / 15
         let progress = 1 - percent/100
+        let water = allWater * percent / 100
         
-    return ZStack {
+        return ZStack {
             
             Circle()
                 .stroke((colorScheme == .dark ? Color.gray: Color.black.opacity(0.2)), style: StrokeStyle(lineWidth: 5 * multiplier, lineJoin: .round))
@@ -37,20 +39,27 @@ struct RingView: View {
                 .rotation3DEffect(.degrees(180),axis: (x: 1.0, y: 1.0, z: 0.0))
                 .frame(width: width * multiplier, height: width * multiplier)
                 .shadow(color: color2.opacity(0.1), radius: 3 * multiplier  , x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3 * multiplier)
-                
-                
-            Text("\(Int(percent))%")
-                .fontWeight(.bold)
-                .font(.system(size: 14 * multiplier))
-                .foregroundColor(colorScheme == .dark ? color1: color2)
-                
+            
+            
+            VStack {
+                Text("\(Int(water)) мл.")
+                    .font(.system(size: 8 * multiplier))
+                    .fontWeight(.bold)
+                Text("\(Int(percent))%")
+                    .font(.system(size: 12 * multiplier))
+                    .fontWeight(.bold)
+            }
+            
+            .foregroundColor(colorScheme == .dark ? color1: color2)
+            
+            
         }
     }
 }
 
 struct RingView_Previews: PreviewProvider {
     static var previews: some View {
-        RingView(show: true)
+        RingView(show: true, allWater: .constant(500))
             .preferredColorScheme(.dark)
     }
 }

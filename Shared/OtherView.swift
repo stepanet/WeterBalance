@@ -50,7 +50,7 @@ struct OtherView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OtherView(showOther: .constant(true), percent: .constant(10), allWater: . constant(1))
-                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+               // .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         }
     }
 }
