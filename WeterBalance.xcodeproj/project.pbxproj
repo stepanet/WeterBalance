@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00A8F68258D6A7A00B4C74A /* ActivityRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A8F67258D6A7A00B4C74A /* ActivityRing.swift */; };
+		E00A8F69258D6A7A00B4C74A /* ActivityRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A8F67258D6A7A00B4C74A /* ActivityRing.swift */; };
+		E00A8F6D258D710300B4C74A /* ActivityRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A8F6C258D710300B4C74A /* ActivityRingView.swift */; };
+		E00A8F6E258D710300B4C74A /* ActivityRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A8F6C258D710300B4C74A /* ActivityRingView.swift */; };
 		E0C508092589600C0001EBC9 /* WeterBalanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C507F6258960090001EBC9 /* WeterBalanceApp.swift */; };
 		E0C5080A2589600C0001EBC9 /* WeterBalanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C507F6258960090001EBC9 /* WeterBalanceApp.swift */; };
 		E0C5080B2589600C0001EBC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C507F7258960090001EBC9 /* ContentView.swift */; };
@@ -22,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00A8F67258D6A7A00B4C74A /* ActivityRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRing.swift; sourceTree = "<group>"; };
+		E00A8F6C258D710300B4C74A /* ActivityRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingView.swift; sourceTree = "<group>"; };
 		E0C507F6258960090001EBC9 /* WeterBalanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeterBalanceApp.swift; sourceTree = "<group>"; };
 		E0C507F7258960090001EBC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E0C507F82589600B0001EBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,8 +74,10 @@
 			children = (
 				E0C507F6258960090001EBC9 /* WeterBalanceApp.swift */,
 				E0C507F7258960090001EBC9 /* ContentView.swift */,
+				E00A8F6C258D710300B4C74A /* ActivityRingView.swift */,
 				E0C5082325897A920001EBC9 /* YourWeightView.swift */,
 				E0C5081E25896A9B0001EBC9 /* OtherView.swift */,
+				E00A8F67258D6A7A00B4C74A /* ActivityRing.swift */,
 				E0C508192589614B0001EBC9 /* Ring.swift */,
 				E0C507F82589600B0001EBC9 /* Assets.xcassets */,
 			);
@@ -201,9 +209,11 @@
 			files = (
 				E0C5080B2589600C0001EBC9 /* ContentView.swift in Sources */,
 				E0C5081A2589614B0001EBC9 /* Ring.swift in Sources */,
+				E00A8F68258D6A7A00B4C74A /* ActivityRing.swift in Sources */,
 				E0C5082425897A920001EBC9 /* YourWeightView.swift in Sources */,
 				E0C508092589600C0001EBC9 /* WeterBalanceApp.swift in Sources */,
 				E0C5081F25896A9B0001EBC9 /* OtherView.swift in Sources */,
+				E00A8F6D258D710300B4C74A /* ActivityRingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,9 +223,11 @@
 			files = (
 				E0C5080C2589600C0001EBC9 /* ContentView.swift in Sources */,
 				E0C5081B2589614B0001EBC9 /* Ring.swift in Sources */,
+				E00A8F69258D6A7A00B4C74A /* ActivityRing.swift in Sources */,
 				E0C5082525897A920001EBC9 /* YourWeightView.swift in Sources */,
 				E0C5080A2589600C0001EBC9 /* WeterBalanceApp.swift in Sources */,
 				E0C5082025896A9B0001EBC9 /* OtherView.swift in Sources */,
+				E00A8F6E258D710300B4C74A /* ActivityRingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

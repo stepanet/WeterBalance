@@ -19,6 +19,7 @@ struct ContentView: View {
     
     var color1 = Color(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1))
     var color2 = Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1))
+    var frameSize: CGFloat = UIScreen.main.bounds.width - 64
     
     var body: some View {
         
@@ -45,7 +46,7 @@ struct ContentView: View {
                         self.showOther = false
                         self.showWeigth = false
                     }, label: {
-                        Image(systemName: "stop.fill")
+                        Image(systemName: "xmark.octagon.fill")
                     })
                 }
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -64,19 +65,29 @@ struct ContentView: View {
                 
                 Text("Желательное потребление воды в сутки \(Int(allWater)) мл.")
                     .kerning(3)
-                    .padding(.horizontal, 40)
-                    .padding(.bottom,34)
+                    .padding(.horizontal, 24)
+                    .padding(.bottom,24)
                     .multilineTextAlignment(.center)
                 
-                RingView(percent: percent, show: true, allWater: $allWater)
-                    .padding(.bottom, 64)
+               // RingView(percent: percent, show: true, allWater: $allWater)
+                //    .padding(.bottom, 64)
+                
+//                PercentageRing(ringWidth: 25, percent: Double(percent) ,
+//                            backgroundColor: color1.opacity(0.2),
+//                            foregroundColors: [color1, color2])
+                    
+//
+                ActivityRingView(progress: Double(percent/100), lineWidth: frameSize / 7.86, gradient: Gradient(colors: [color1, color2]), allWater: $allWater)
+                    .frame(width: frameSize, height: frameSize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding(.bottom, 24)
+                
                 
                 VStack(spacing: 20) {
                     HStack(spacing: 40) {
                         Button(action: {
                             self.percent = percent + 150 * 100 / allWater
                         }, label: {
-                            Text("150")
+                            Text("150мл")
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .background(color1)
@@ -87,7 +98,7 @@ struct ContentView: View {
                         Button(action: {
                             self.percent = percent + 250 * 100 / allWater
                         }, label: {
-                            Text("250")
+                            Text("250мл")
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .background(color1)
@@ -100,7 +111,7 @@ struct ContentView: View {
                         Button(action: {
                             self.percent = percent + 500 * 100 / allWater
                         }, label: {
-                            Text("500")
+                            Text("500мл")
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .padding()
                                 .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

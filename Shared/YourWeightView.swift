@@ -40,12 +40,12 @@ struct YourWeightView: View {
                 .foregroundColor(colorScheme == .dark ? Color.black: Color.black)
             
             Slider(value: Binding(get: {
-                            self.weigth
-                        }, set: { newValue  in
-                            self.weigth = newValue
-                            self.percent = percent * (allWater / (newValue * 35))
-                            self.allWater = newValue * 35
-                        }), in: 0...150, step: 1)
+                self.weigth
+            }, set: { newValue  in
+                self.weigth = newValue
+                self.percent = percent * (allWater / (newValue * 35))
+                self.allWater = newValue * 35
+            }), in: 1...150, step: 0.5)
             .padding(.horizontal,10)
             .padding(.bottom,25)
         }
@@ -59,8 +59,8 @@ struct YourWeightView: View {
 struct YourWeightView_Previews: PreviewProvider {
     static var previews: some View {
         YourWeightView(showWeigth: .constant(true), weigth: .constant(71), allWater: .constant(1), percent: .constant(1))
-            //.preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        //.preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         ContentView()
-          //  .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        //  .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
