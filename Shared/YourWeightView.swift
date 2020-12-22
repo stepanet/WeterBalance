@@ -9,10 +9,10 @@ import SwiftUI
 
 struct YourWeightView: View {
     
+    @ObservedObject var settings = UDSettings()
     @Environment(\.colorScheme) var colorScheme
     
     @Binding var showWeigth: Bool
-    @Binding var weigth: CGFloat
     @Binding var allWater: CGFloat
     @Binding var percent: CGFloat
     
@@ -34,16 +34,16 @@ struct YourWeightView: View {
             }
             .padding(.bottom,25)
             
-            Text("Ваш вес \(Int(weigth)) кг.")
+            Text("Ваш вес \(Int(self.settings.userWeigth)) кг.")
                 .font(.title3)
                 .padding(.bottom,25)
                 .foregroundColor(colorScheme == .dark ? Color.black: Color.black)
             
             Slider(value: Binding(get: {
-                self.weigth
+                CGFloat(self.settings.userWeigth)
             }, set: { newValue  in
-                self.weigth = newValue
-                self.percent = percent * (allWater / (newValue * 35))
+                self.settings.userWeigth = Int(newValue)
+                self.percent = percent * (allWater / (/*newValue*/ CGFloat(self.settings.userWeigth) * 35))
                 self.allWater = newValue * 35
             }), in: 1...150, step: 0.5)
             .padding(.horizontal,10)
@@ -58,7 +58,8 @@ struct YourWeightView: View {
 
 struct YourWeightView_Previews: PreviewProvider {
     static var previews: some View {
-        YourWeightView(showWeigth: .constant(true), weigth: .constant(71), allWater: .constant(1), percent: .constant(1))
+        YourWeightView(showWeigth: .constant(true),
+                       allWater: .constant(1), percent: .constant(1))
         //.preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         ContentView()
         //  .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)

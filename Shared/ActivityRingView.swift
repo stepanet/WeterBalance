@@ -21,7 +21,7 @@ struct ActivityRingView: View {
     @Binding var allWater: CGFloat
     
     var body: some View {
-        var trimVar = 0.0
+
         let water = allWater * CGFloat(progress)
         
         // Main ring
@@ -81,6 +81,6 @@ struct ActivityRingView: View {
 
 struct ActivityRingView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityRingView(progress: 0, lineWidth: 50, gradient: Gradient(colors: [.red, .blue]), allWater: .constant(100))
+        ActivityRingView(progress: 0.2, lineWidth: 50, gradient: Gradient(colors: [.red, .blue]), allWater: .constant(100))
     }
 }
