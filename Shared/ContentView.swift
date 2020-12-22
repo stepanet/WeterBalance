@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct ContentView: View {
     
     @ObservedObject var settings = UDSettings()
@@ -78,7 +81,7 @@ struct ContentView: View {
                 //                            foregroundColors: [color1, color2])
                 
                 //
-                ActivityRingView(progress: Double(percent/100), lineWidth: frameSize / 7.86, gradient: Gradient(colors: [color1, color2]), allWater: $allWater)
+                ActivityRingView(progress: Double(percent/100), lineWidth: frameSize / 7.8, gradient: Gradient(colors: [color1, color2]), allWater: $allWater)
                     .frame(width: frameSize, height: frameSize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 24)
                 
@@ -134,6 +137,7 @@ struct ContentView: View {
                         })
                     }
                 }
+                .disabled(self.allWater == 0 ? true : false)
             }
             
             .onAppear(){
@@ -151,6 +155,9 @@ struct ContentView: View {
                 .animation(.spring(response: 0.5, dampingFraction: 0.4, blendDuration: 0.3))
         }
     }
+    
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
